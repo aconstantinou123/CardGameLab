@@ -23,4 +23,9 @@ public class Card {
     public int getSuitEnum() {
         return suit.getSuitValue();
     }
+
+    public String prettyView() {
+        String cardName = String.format("The %s of %s", value.getType(), suit.getSuittype());
+        return cardName;
+    }
 }

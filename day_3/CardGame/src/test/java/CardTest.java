@@ -36,6 +36,11 @@ public class CardTest {
     }
 
     @Test
+    public void canSeePrettyCardName() {
+        assertEquals("The Ace of Spades", card1.prettyView());
+    }
+
+    @Test
     public void deckIsFull() {
         assertEquals(52, deck1.deckSize());
     }
@@ -51,6 +56,12 @@ public class CardTest {
         deck1.populateDeck();
         deck2.populateDeck();
         deck2.shuffle();
-        assertNotEquals(deck1.viewDeck(), deck2.viewDeck());
+        assertNotEquals(deck1.deal(), deck2.deal());
+    }
+
+    @Test
+    public void canDeal() {
+        deck1.populateDeck();
+        assertEquals("The Ace of Hearts", deck1.deal());
     }
 }

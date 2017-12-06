@@ -25,10 +25,8 @@ public class Deck {
             for (int card = 0; card < 13; card++) {
                 cards[index] = new Card(suitTypes[suit], cardValues[card]);
                 index++;
-                System.out.println(cards);
             }
         }
-        System.out.println("");
     }
 
     public int deckSize() {
@@ -44,12 +42,10 @@ public class Deck {
         Collections.shuffle(Arrays.asList(cards));
     }
 
+
+    public String deal() {
+        Card topCard = this.cards[0];
+        return topCard.prettyView();
+    }
 }
 
-//    int index = 0;
-//    for (int suit = 0; suit <= 3; suit++) {
-//            for (int rank = 1; rank <= 13; rank++) {
-//            deck[index] = new Card (suit, rank);
-//            index++;
-//            }
-//            }
