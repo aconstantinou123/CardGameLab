@@ -33,9 +33,6 @@ public class Deck {
         return cards.length;
     }
 
-    public Card[] viewDeck() {
-        return cards;
-    }
 
     public void shuffle() {
         this.populateDeck();

@@ -17,10 +17,8 @@ public class Hand {
         this.cardsHeld.add(card);
     }
 
-    public ArrayList hand() {
-        ArrayList handCopy = new ArrayList(cardsHeld);
-        handCopy.addAll(cardsHeld);
-        return handCopy;
+    public ArrayList<Card> hand() {
+        return cardsHeld;
     }
 
     public int handValue() {

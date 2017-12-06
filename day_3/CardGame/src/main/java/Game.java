@@ -4,10 +4,12 @@ public class Game {
 
     private Deck deck;
     private ArrayList<Player> players;
+    private UI ui;
 
     public Game(Deck deck) {
         this.deck = deck;
         this.players = new ArrayList<>();
+        this.ui = new UI();
     }
 
     public int playerCount() {
@@ -25,6 +27,7 @@ public class Game {
                 winningPlayer = player;
             }
         }
+        ui.showPlayerHands(players);
         return winningPlayer;
     }
 }

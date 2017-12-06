@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Player {
 
     private String name;
@@ -10,5 +12,17 @@ public class Player {
 
     public int playerhandValue() {
         return hand.handValue();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<String> seeCard() {
+        ArrayList<String> prettyCards = new ArrayList<>();
+        for( Card card : this.hand.hand()){
+            prettyCards.add(card.prettyView());
+        }
+        return prettyCards;
     }
 }
