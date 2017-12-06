@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Player {
 
@@ -18,11 +19,12 @@ public class Player {
         return name;
     }
 
-    public ArrayList<String> seeCard() {
+    public String seeCard() {
         ArrayList<String> prettyCards = new ArrayList<>();
         for( Card card : this.hand.hand()){
             prettyCards.add(card.prettyView());
         }
-        return prettyCards;
+        String result = String.join(",", prettyCards);
+        return result;
     }
 }
