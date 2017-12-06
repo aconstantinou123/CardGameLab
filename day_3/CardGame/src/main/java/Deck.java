@@ -44,8 +44,19 @@ public class Deck {
 
 
     public String deal() {
-        Card topCard = this.cards[0];
-        return topCard.prettyView();
-    }
+
+        if (this.cards[0] != null)
+        {
+            Card topCard = this.cards[0];
+            this.cards[0] = null;
+            return topCard.prettyView();
+        }
+        else {
+            Card topCard = this.cards[1];
+            this.cards[0] = null;
+            return topCard.prettyView();
+            }
+        }
+
 }
 

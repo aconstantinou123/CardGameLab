@@ -63,5 +63,6 @@ public class CardTest {
     public void canDeal() {
         deck1.populateDeck();
         assertEquals("The Ace of Hearts", deck1.deal());
+        assertEquals("The Two of Hearts", deck1.deal());
     }
 }
