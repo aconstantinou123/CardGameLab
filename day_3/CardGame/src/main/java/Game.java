@@ -17,4 +17,14 @@ public class Game {
     public void addPlayer(Player player) {
         this.players.add(player);
     }
+
+    public Player playGame() {
+        Player winningPlayer = players.get(0);
+        for (Player player : this.players ) {
+            if(player.playerhandValue() > winningPlayer.playerhandValue()) {
+                winningPlayer = player;
+            }
+        }
+        return winningPlayer;
+    }
 }
