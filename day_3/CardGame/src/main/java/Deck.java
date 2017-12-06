@@ -43,20 +43,24 @@ public class Deck {
     }
 
 
-    public String deal() {
+    public String deal(Hand hand) {
 
         if (this.cards[0] != null)
         {
             Card topCard = this.cards[0];
             this.cards[0] = null;
+            hand.addCard(topCard);
             return topCard.prettyView();
         }
         else {
             Card topCard = this.cards[1];
-            this.cards[0] = null;
+            this.cards[1] = null;
+            hand.addCard(topCard);
             return topCard.prettyView();
             }
         }
+
+
 
 }
 
