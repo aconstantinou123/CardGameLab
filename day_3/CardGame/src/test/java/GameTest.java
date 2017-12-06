@@ -40,6 +40,8 @@ public class GameTest {
         deck1.shuffle();
         deck1.deal(hand1);
         deck1.deal(hand2);
+        deck1.deal(hand1);
+        deck1.deal(hand2);
         game1.playGame();
     }
 
