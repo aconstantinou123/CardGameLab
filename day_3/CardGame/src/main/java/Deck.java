@@ -5,14 +5,14 @@ import java.util.Collections;
 
 public class Deck {
 
-    private Card[] cards;
+    private ArrayList<Card> cards;
     private SuitType[] suitTypes;
     private CardValue[] cardValues;
 
 
     public Deck() {
 
-        this.cards = new Card[52];
+        this.cards = new ArrayList<Card>();
         this.suitTypes = SuitType.values();
         this.cardValues = CardValue.values();
     }
@@ -20,42 +20,25 @@ public class Deck {
 
 
     public void populateDeck() {
-        int index = 0;
         for(int suit = 0; suit < 4; suit++) {
             for (int card = 0; card < 13; card++) {
-                cards[index] = new Card(suitTypes[suit], cardValues[card]);
-                index++;
+                cards.add(new Card(suitTypes[suit], cardValues[card]));
             }
         }
-    }
-
-    public int deckSize() {
-        return cards.length;
     }
 
 
     public void shuffle() {
         this.populateDeck();
-        Collections.shuffle(Arrays.asList(cards));
+        Collections.shuffle(cards);
     }
 
 
     public String deal(Hand hand) {
-
-        if (this.cards[0] != null)
-        {
-            Card topCard = this.cards[0];
-            this.cards[0] = null;
-            hand.addCard(topCard);
-            return topCard.prettyView();
-        }
-        else {
-            Card topCard = this.cards[1];
-            this.cards[1] = null;
-            hand.addCard(topCard);
-            return topCard.prettyView();
-            }
-        }
+        Card topCard = cards.remove(0);
+        hand.addCard(topCard);
+        return topCard.prettyView();
+    }
 
 
 

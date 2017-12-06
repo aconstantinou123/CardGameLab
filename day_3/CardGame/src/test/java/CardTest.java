@@ -45,17 +45,6 @@ public class CardTest {
     }
 
     @Test
-    public void deckIsFull() {
-        assertEquals(52, deck1.deckSize());
-    }
-
-    @Test
-    public void checkDeck() {
-        deck1.populateDeck();
-        assertEquals(52, deck1.deckSize());
-    }
-
-    @Test
     public void canShuffle() {
         deck1.populateDeck();
         deck2.populateDeck();

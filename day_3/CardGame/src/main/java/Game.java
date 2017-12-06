@@ -28,6 +28,7 @@ public class Game {
             }
         }
         ui.showPlayerHands(players);
+        ui.showWinner(winningPlayer);
         return winningPlayer;
     }
 }
