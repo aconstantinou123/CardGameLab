@@ -18,7 +18,8 @@ public class Hand {
     }
 
     public ArrayList<Card> hand() {
-        return cardsHeld;
+        ArrayList<Card> cardsHeldCopy = new ArrayList<>(this.cardsHeld);
+        return cardsHeldCopy;
     }
 
     public int handValue() {
