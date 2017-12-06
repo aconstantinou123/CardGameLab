@@ -43,7 +43,6 @@ public class GameTest {
     public void canDraw__True() {
         hand1.addCard(card1);
         hand2.addCard(card2);
-        game1.playGame();
         assertEquals(true, game1.checkDraw());
     }
 
@@ -51,7 +50,6 @@ public class GameTest {
     public void canDraw__False() {
         hand1.addCard(card1);
         hand2.addCard(card3);
-        game1.playGame();
         assertEquals(false, game1.checkDraw());
     }
 
