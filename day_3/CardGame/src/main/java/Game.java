@@ -20,6 +20,14 @@ public class Game {
         this.players.add(player);
     }
 
+    public boolean checkDraw() {
+        boolean result = false;
+                if (players.get(0).playerhandValue() == players.get(1).playerhandValue()) {
+                    result = true;
+                }
+        return result;
+    }
+
     public Player playGame() {
         Player winningPlayer = players.get(0);
         for (Player player : this.players ) {
@@ -28,7 +36,12 @@ public class Game {
             }
         }
         ui.showPlayerHands(players);
-        ui.showWinner(winningPlayer);
+      if (checkDraw() != true) {
+          ui.showWinner(winningPlayer);
+      }
+      else {
+          ui.drawMessage();
+      }
         return winningPlayer;
     }
 }

@@ -24,7 +24,7 @@ public class Player {
         for( Card card : this.hand.hand()){
             prettyCards.add(card.prettyView());
         }
-        String result = String.join(",", prettyCards);
+        String result = String.join(" and ", prettyCards);
         return result;
     }
 }

@@ -8,6 +8,8 @@ public class GameTest {
     Deck deck1;
     Deck deck2;
     Card card1;
+    Card card2;
+    Card card3;
     Hand hand1;
     Hand hand2;
     Player player1;
@@ -17,6 +19,8 @@ public class GameTest {
     @Before
     public void before() {
         card1 = new Card(SuitType.SPADES, CardValue.ACE);
+        card2 = new Card(SuitType.SPADES, CardValue.ACE);
+        card3 = new Card(SuitType.CLUBS, CardValue.TWO);
         deck1 = new Deck();
         deck2 = new Deck();
         hand1 = new Hand();
@@ -33,6 +37,22 @@ public class GameTest {
     @Test
     public void canAddPlayer() {
         assertEquals(2, game1.playerCount());
+    }
+
+    @Test
+    public void canDraw__True() {
+        hand1.addCard(card1);
+        hand2.addCard(card2);
+        game1.playGame();
+        assertEquals(true, game1.checkDraw());
+    }
+
+    @Test
+    public void canDraw__False() {
+        hand1.addCard(card1);
+        hand2.addCard(card3);
+        game1.playGame();
+        assertEquals(false, game1.checkDraw());
     }
 
     @Test

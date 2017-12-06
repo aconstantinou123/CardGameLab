@@ -11,4 +11,9 @@ public class UI {
         System.out.println(System.lineSeparator());
         System.out.println(winningPlayer.getName() + " is the winner!");
     }
+
+    public void drawMessage() {
+        System.out.println(System.lineSeparator());
+        System.out.println("It's a draw");
+    }
 }
