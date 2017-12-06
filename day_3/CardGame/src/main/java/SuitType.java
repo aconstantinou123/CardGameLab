@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public enum SuitType {
     HEARTS(0),
     DIAMONDS(1),
@@ -13,5 +15,6 @@ public enum SuitType {
     public int getSuitValue() {
         return this.value;
     }
+
 
 }
