@@ -4,11 +4,13 @@ public class Game {
 
     private Deck deck;
     private ArrayList<Player> players;
+    private ArrayList<Player> winners;
     private UI ui;
 
     public Game(Deck deck) {
         this.deck = deck;
         this.players = new ArrayList<>();
+        this.winners = new ArrayList<>();
         this.ui = new UI();
     }
 
@@ -28,20 +30,27 @@ public class Game {
         return result;
     }
 
+
     public Player playGame() {
-        Player winningPlayer = players.get(0);
         for (Player player : this.players ) {
-            if(player.playerhandValue() > winningPlayer.playerhandValue()) {
-                winningPlayer = player;
+            if(winners.size() == 0){
+                winners.add(player);
+            }
+            else if(winners.get(0).playerhandValue() < player.playerhandValue()) {
+                winners.clear();
+                winners.add(player);
+            }
+            else if(player.playerhandValue() == winners.get(0).playerhandValue()){
+                winners.add(player);
             }
         }
         ui.showPlayerHands(players);
-      if (checkDraw() != true) {
-          ui.showWinner(winningPlayer);
+      if (winners.size() == 1) {
+          ui.showWinner(winners.get(0));
       }
       else {
           ui.drawMessage();
       }
-        return winningPlayer;
+        return winners.get(0);
     }
 }

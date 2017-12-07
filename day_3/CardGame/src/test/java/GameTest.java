@@ -15,6 +15,7 @@ public class GameTest {
     Player player1;
     Player player2;
     Game game1;
+    UI ui;
 
     @Before
     public void before() {
@@ -30,6 +31,7 @@ public class GameTest {
         game1 = new Game(deck1);
         game1.addPlayer(player1);
         game1.addPlayer(player2);
+        ui = new UI();
 
 
     }
@@ -39,12 +41,6 @@ public class GameTest {
         assertEquals(2, game1.playerCount());
     }
 
-    @Test
-    public void canDraw__True() {
-        hand1.addCard(card1);
-        hand2.addCard(card2);
-        assertEquals(true, game1.checkDraw());
-    }
 
     @Test
     public void canDraw__False() {
@@ -52,6 +48,7 @@ public class GameTest {
         hand2.addCard(card3);
         assertEquals(false, game1.checkDraw());
     }
+    
 
     @Test
     public void playCanWin_Player1(){
