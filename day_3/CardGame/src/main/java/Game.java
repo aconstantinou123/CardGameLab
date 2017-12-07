@@ -18,6 +18,14 @@ public class Game {
         return this.players.size();
     }
 
+    public Deck getDeck() {
+        return this.deck;
+    }
+
+    public ArrayList<Player> getPlayer() {
+        return this.players;
+    }
+
     public void addPlayer(Player player) {
         this.players.add(player);
     }

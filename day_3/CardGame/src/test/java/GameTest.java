@@ -42,12 +42,12 @@ public class GameTest {
     }
 
 
-    @Test
-    public void canDraw__False() {
-        hand1.addCard(card1);
-        hand2.addCard(card3);
-        assertEquals(false, game1.checkDraw());
-    }
+//       @Test
+//            public void canDraw__False() {
+//           hand1.addCard(card1);
+//          hand2.addCard(card3);
+//           assertEquals(false, game1.checkDraw());
+//        }
     
 
     @Test

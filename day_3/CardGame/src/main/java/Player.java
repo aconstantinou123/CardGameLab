@@ -15,6 +15,10 @@ public class Player {
         return hand.handValue();
     }
 
+    public Hand getplayerhand() {
+        return this.hand;
+    }
+
     public String getName() {
         return name;
     }
