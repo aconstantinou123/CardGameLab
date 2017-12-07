@@ -31,13 +31,14 @@ public class Runner {
             nameNumber +=1;
             Hand hand = new Hand();
             game.addPlayer(new Player(name, hand));
-            game.getDeck().shuffle();
              }
-                for (Player players : game.getPlayer()) {
+                game.getDeck().shuffle();
+                for (Player players : game.getPlayer())
+                {
                 game.getDeck().deal(players.getplayerhand());
                 game.getDeck().deal(players.getplayerhand());
 
-            }
+                }
              game.playGame();
         }
 
